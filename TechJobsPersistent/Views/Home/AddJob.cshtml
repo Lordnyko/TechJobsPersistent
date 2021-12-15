@@ -1,7 +1,9 @@
 ﻿@model TechJobsPersistent.ViewModels.AddJobViewModel
+
+
 <h1>Add a Job</h1>
 
-<form asp-controller="Home" asp-action="ProcessAddJobForm" method="post">
+<form asp-controller="Home" asp-action="Add" method="post">
     <div class="form-group">
         <label asp-for="Name">Name</label>
         <input asp-for="Name" class="form-control" />
@@ -17,7 +19,7 @@
         <label for="selectedSkills">Skills</label>
         @if (Model.Skills == null)
         {
-            <p>Add a new skill.</p>
+            <p>Create a new Skill to choose from.</p>
         }
         else
         {
@@ -30,6 +32,7 @@
         @*<span asp-validation-for="SkillId"></span>*@
         <p><a asp-controller="Skill" asp-action="Add">Add Skills</a></p>
     </div>
+
 
     <input type="submit" value="Add Job" />
 </form>
